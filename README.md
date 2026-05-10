@@ -1,4 +1,4 @@
-# 🧠 PARALLEL SELF — AI Personality Clone Simulator
+# Parallel Self AI — Personality Clone Simulator
 
 > *"Version_You.exe // Loading Fierce Mode…"*
 
@@ -6,7 +6,7 @@ An AI-powered personality profiling and clone simulation system. Create a digita
 
 ---
 
-## 🎯 What Problem Does It Solve?
+## What Problem Does It Solve?
 
 Instead of generic self-help advice, Parallel Self **shows** you how a stronger version of yourself would act — making personal growth visual, interactive, and measurable.
 
@@ -17,14 +17,14 @@ Instead of generic self-help advice, Parallel Self **shows** you how a stronger 
 
 ---
 
-## 🧬 How It Works
+## How It Works
 
-### 1. Personality Profiling
-- Answer 20 behavioral questions across 5 trait dimensions
-- Optional: provide a free-text writing sample
-- AI extracts personality DNA using **VADER sentiment analysis** and **lexical trait scoring**
+### 1. Personality Profiling (Stage 01)
+- Answer 5 behavioral questions across trait dimensions
+- Provide a free-text writing sample (30+ chars)
+- Claude AI extracts your personality DNA — archetype classification + trait baseline
 
-### 2. Clone Generation
+### 2. Clone Modification (Stage 02)
 Adjust trait sliders to create your parallel self:
 
 | Trait        | Low End     | High End    |
@@ -35,95 +35,89 @@ Adjust trait sliders to create your parallel self:
 | Risk-Taking | Cautious    | Bold        |
 | Discipline  | Flexible    | Disciplined |
 
-Quick presets: 🔥 Fierce, 🧊 Stoic, 🚀 Bold, 🎯 Focused, ⚡ Max
+Quick presets: Fierce, Stoic, Bold, Focused, Max
 
-### 3. Scenario Simulation
-Test both versions across 8 real-life scenarios:
-- 💼 Job Interview
-- ⚡ Heated Argument
-- 🎤 Public Speaking
-- 💬 Relationship Conflict
-- 🤝 Salary Negotiation
-- 🚫 Handling Rejection
-- 👑 Leadership Moment
-- 🛡️ Setting Boundaries
+Real-time divergence tracking and archetype re-classification.
+
+### 3. Scenario Simulation (Stage 03)
+Test both versions across 4 high-stakes scenarios:
+- High-stakes interview
+- Salary negotiation
+- Difficult conversation
+- Pitching investors
 
 Each simulation generates:
 - **Real You** response
 - **Parallel You** response
-- **Comparative analysis**
-
-### 4. Identity Dashboard
-- Side-by-side trait comparison bars
-- Identity Divergence Score
-- Clone Stability Index
-- Text sample sentiment analysis
-- Exportable profile JSON
+- **Comparative behavioral analysis**
+- **Voice playback** via Web Speech API
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
-| Component           | Technology                        |
-|--------------------|-----------------------------------|
-| UI Framework       | Streamlit (Cyberpunk custom CSS)  |
-| Sentiment Analysis | VADER (vaderSentiment)            |
-| ML/Clustering      | scikit-learn                      |
-| Text Analysis      | Lexical trait scoring + NLP       |
-| Response Engine    | Rule-based trait-weighted system  |
-
-**No heavy deep learning required** — runs on any machine.
-
----
-
-## 📊 AI Techniques (Viva-Ready)
-
-- **NLP Feature Extraction** — Lexical marker analysis from writing samples
-- **Personality Trait Clustering** — Multi-dimensional behavioral profiling
-- **Sentiment Polarity Scoring** — VADER compound + dimensional scores
-- **Behavioral Simulation Modeling** — Trait-intensity response mapping
-- **Parameter-Controlled Response Generation** — Slider-driven personality modification
+| Component        | Technology                              |
+|------------------|-----------------------------------------|
+| Frontend         | React 18 + Vite                         |
+| Backend          | Express.js (API proxy)                  |
+| AI Engine        | Claude API (Anthropic)                  |
+| Voice Playback   | Web Speech API (browser-native TTS)     |
+| Styling          | Inline CSS with custom dark theme       |
+| Fonts            | Fraunces, Geist, JetBrains Mono         |
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Install dependencies
-pip install -r requirements.txt
+npm install
 
-# Run the application
-streamlit run app.py
+# Add your Anthropic API key
+cp .env.example .env
+# Edit .env and add your key
+
+# Run both frontend and backend
+npm start
 ```
 
-Then open `http://localhost:8501` in your browser.
+Then open `http://localhost:5173` in your browser.
+
+- **Frontend** runs on port 5173 (Vite dev server)
+- **Backend** runs on port 3001 (Express API proxy)
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 parallel-self/
-├── app.py                  # Main Streamlit application (UI + routing)
-├── personality_engine.py   # Personality profiling, trait analysis, archetypes
-├── clone_engine.py         # Response generation, scenario simulation
-├── requirements.txt        # Python dependencies
-└── README.md               # This file
+├── index.html          # HTML entry point
+├── package.json        # Dependencies and scripts
+├── vite.config.js      # Vite config with API proxy
+├── server.js           # Express backend (Claude API proxy)
+├── .env.example        # Environment variable template
+├── .env                # Your API key (gitignored)
+├── .gitignore
+├── README.md
+└── src/
+    ├── main.jsx        # React entry point
+    └── App.jsx         # Full app (profile/modify/simulate stages)
 ```
 
 ---
 
-## 🎨 UI Design
+## UI Design
 
-- **Dark mode** with cyberpunk aesthetics
-- **Neon cyan / magenta / green** accent system
-- Custom fonts: Orbitron (headers), Rajdhani (body), Share Tech Mono (data)
-- Terminal-style boot sequences
-- Glowing trait bars and metrics
-- "Clone Stability Index" and "Identity Divergence Score"
+- **Dark mode** with minimal, editorial aesthetic
+- **Accent color**: `#D4FF3F` (lime/chartreuse)
+- Custom fonts: Fraunces (display), Geist (body), JetBrains Mono (data)
+- Animated speaking avatars with lip-sync
+- Identity Divergence Score and Clone Stability Index
+- Smooth stage transitions with fade animations
 
 ---
 
-## 📝 License
+## License
 
 MIT — Built as an AI/ML portfolio project.

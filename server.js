@@ -19,7 +19,7 @@ app.post("/api/claude", async (req, res) => {
     if (!prompt) return res.status(400).json({ error: "missing prompt" });
 
     const msg = await client.messages.create({
-      model: "claude-sonnet-4-5",
+      model: "claude-sonnet-4-20250514",
       max_tokens: 1000,
       messages: [{ role: "user", content: prompt }],
     });
